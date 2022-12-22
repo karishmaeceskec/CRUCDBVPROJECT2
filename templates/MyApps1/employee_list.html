@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'MyApps1/base.html'%}
+{%block body_block%}
+    <h1>Employee Information List</h1>
+    <hr />
+    <table border='2'>
+        <thead>
+            <th>EmpNo</th>
+            <th>EmpName</th>
+            <th>JOB</th>
+            <th>Salary</th>
+            <th colspan="3">Operations</th>
+        </thead>
+        {%for employee in employee_list%}
+        <tr>
+            <td>{{employee.empno}}</td>
+            <td>{{employee.ename|title}}</td>
+            <td>{{employee.job|title}}</td>
+            <td>{{employee.sal|title}}</td>
+            <td><a href="/detail/{{employee.id}}">Details</a></td>
+            <td><a href="/update/{{employee.id}}">Update</a></td>
+            <td><a href="/delete/{{employee.id}}">Delete</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+    <br /><br /><br />
+    <a href="/create">CLICK-HERE to Insert New-Employee-Record!!</a>
+{%endblock%}
+

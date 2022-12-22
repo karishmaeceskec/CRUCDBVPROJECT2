@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'MyApps1/base.html'%}
+{%block body_block%}
+    <h1>Add New Employee Here</h1><hr>
+    <form method="post">
+        {{form.as_p}}
+        {%csrf_token%}
+        <input type="submit" value="Insert/Update">
+    </form>
+    <a href="/home">CANCEL to Go-Back</a>
+{%endblock%}
